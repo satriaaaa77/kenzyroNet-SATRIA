@@ -1,0 +1,290 @@
+/* =====================================================
+   kenzyroNet - Penjualan Voucher WiFi Online
+   Semua selector memakai awalan "nama_" (ganti dengan
+   nama depan Anda, contoh: andi_header)
+   ===================================================== */
+:root{
+  --nama_ink:#0a1b2a;
+  --nama_ink2:#32465a;
+  --nama_muted:#6b7c8c;
+  --nama_bg:#f5f7f2;
+  --nama_card:#ffffff;
+  --nama_line:#dfe5dc;
+  --nama_brand:#0b7a63;
+  --nama_brand-d:#075a49;
+  --nama_lime:#c8f43a;
+  --nama_amber:#ffb703;
+  --nama_danger:#d1432f;
+  --nama_radius:18px;
+  --nama_shadow:0 12px 30px -14px rgba(10,27,42,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--nama_bg);color:var(--nama_ink);line-height:1.65;font-size:16px}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.2;letter-spacing:-.02em}
+.nama_container{width:min(1140px,100% - 40px);margin-inline:auto}
+.nama_section{padding:84px 0}
+.nama_section-alt{background:#eaf0e4}
+.nama_dark{background:var(--nama_ink);color:#eaf2ee}
+.nama_eyebrow{display:inline-block;font-family:'Sora',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--nama_brand);margin-bottom:12px}
+.nama_dark .nama_eyebrow{color:var(--nama_lime)}
+.nama_title{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:14px}
+.nama_lead{color:var(--nama_ink2);max-width:60ch;font-size:1.06rem}
+.nama_dark .nama_lead{color:#a9bcc9}
+.nama_head{margin-bottom:46px}
+.nama_head-center{text-align:center}
+.nama_head-center .nama_lead{margin-inline:auto}
+
+/* ---------- Tombol ---------- */
+.nama_btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;font-family:'Sora',sans-serif;font-size:.95rem;border:2px solid transparent;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s}
+.nama_btn:hover{transform:translateY(-2px)}
+.nama_btn-primary{background:var(--nama_lime);color:var(--nama_ink);box-shadow:0 8px 20px -8px rgba(200,244,58,.9)}
+.nama_btn-brand{background:var(--nama_brand);color:#fff}
+.nama_btn-brand:hover{background:var(--nama_brand-d)}
+.nama_btn-ghost{border-color:currentColor;background:transparent}
+.nama_btn-block{width:100%}
+.nama_btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+
+/* ---------- Header ---------- */
+#nama_header{position:sticky;top:0;z-index:50;background:rgba(10,27,42,.94);backdrop-filter:blur(10px);color:#fff}
+.nama_nav-wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.nama_logo{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem}
+.nama_logo-mark{width:34px;height:34px;border-radius:10px;background:var(--nama_lime);display:grid;place-items:center}
+.nama_logo b{color:var(--nama_lime)}
+.nama_menu{display:flex;align-items:center;gap:4px;list-style:none}
+.nama_menu a{display:block;padding:8px 13px;border-radius:999px;font-size:.92rem;font-weight:500;color:#c4d3dd;transition:.15s}
+.nama_menu a:hover,.nama_menu a.nama_active{color:#fff;background:rgba(255,255,255,.1)}
+.nama_menu a.nama_active{color:var(--nama_lime)}
+.nama_nav-cta{padding:9px 20px;font-size:.88rem}
+.nama_burger{display:none;background:none;border:0;color:#fff;width:42px;height:42px;cursor:pointer}
+.nama_burger span{display:block;height:2px;background:#fff;margin:6px 8px;transition:.25s}
+.nama_burger.nama_open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nama_burger.nama_open span:nth-child(2){opacity:0}
+.nama_burger.nama_open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+.nama_hero{background:radial-gradient(900px 480px at 85% 0%,rgba(200,244,58,.16),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(11,122,99,.55),transparent 60%),var(--nama_ink);color:#fff;padding:78px 0 96px;overflow:hidden}
+.nama_hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.nama_hero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:20px}
+.nama_hero h1 em{font-style:normal;color:var(--nama_lime);position:relative}
+.nama_hero p{color:#b6c8d4;font-size:1.1rem;max-width:52ch;margin-bottom:30px}
+.nama_hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.nama_badges{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;color:#93aab9;font-size:.9rem}
+.nama_badges span::before{content:"✓";color:var(--nama_lime);font-weight:800;margin-right:7px}
+
+/* tiket voucher */
+.nama_ticket-stage{position:relative;display:grid;place-items:center;min-height:360px}
+.nama_ticket{width:min(360px,100%);background:#fff;color:var(--nama_ink);border-radius:20px;position:relative;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);transform:rotate(-4deg);animation:nama_float 5s ease-in-out infinite}
+.nama_ticket-top{padding:26px 26px 20px;background:var(--nama_lime);border-radius:20px 20px 0 0}
+.nama_ticket-top small{font-weight:700;letter-spacing:.12em;font-size:.72rem}
+.nama_ticket-top h3{font-size:1.7rem;margin-top:4px}
+.nama_ticket-mid{padding:20px 26px;display:flex;justify-content:space-between;gap:10px;font-size:.88rem;color:var(--nama_ink2)}
+.nama_ticket-mid b{display:block;color:var(--nama_ink);font-family:'Sora',sans-serif}
+.nama_ticket-cut{height:0;border-top:3px dashed var(--nama_line);margin:0 18px;position:relative}
+.nama_ticket-cut::before,.nama_ticket-cut::after{content:"";position:absolute;top:-17px;width:30px;height:30px;border-radius:50%;background:var(--nama_ink)}
+.nama_ticket-cut::before{left:-33px}.nama_ticket-cut::after{right:-33px}
+.nama_ticket-code{padding:22px 26px 26px;text-align:center}
+.nama_ticket-code span{font-size:.74rem;letter-spacing:.14em;color:var(--nama_muted)}
+.nama_ticket-code strong{display:block;font-family:'Sora',monospace;font-size:1.55rem;letter-spacing:.12em;margin-top:4px}
+.nama_signal{position:absolute;right:2%;top:2%;width:84px;height:84px;color:var(--nama_lime);opacity:.9}
+.nama_signal i{position:absolute;inset:0;border:3px solid currentColor;border-radius:50%;opacity:0;animation:nama_ping 2.8s infinite}
+.nama_signal i:nth-child(2){animation-delay:.9s}.nama_signal i:nth-child(3){animation-delay:1.8s}
+@keyframes nama_float{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-12px)}}
+@keyframes nama_ping{0%{transform:scale(.2);opacity:.9}100%{transform:scale(1.2);opacity:0}}
+
+/* ---------- Stats ---------- */
+.nama_stats{margin-top:-46px;position:relative;z-index:2}
+.nama_stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:var(--nama_radius);box-shadow:var(--nama_shadow);overflow:hidden}
+.nama_stat{padding:26px 20px;text-align:center;border-right:1px solid var(--nama_line)}
+.nama_stat:last-child{border:0}
+.nama_stat b{display:block;font-family:'Sora',sans-serif;font-size:2rem;color:var(--nama_brand)}
+.nama_stat span{color:var(--nama_muted);font-size:.9rem}
+
+/* ---------- Kartu & grid ---------- */
+.nama_grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.nama_grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.nama_grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.nama_card{background:var(--nama_card);border:1px solid var(--nama_line);border-radius:var(--nama_radius);padding:28px;transition:.25s}
+.nama_card:hover{transform:translateY(-5px);box-shadow:var(--nama_shadow)}
+.nama_icon{width:52px;height:52px;border-radius:14px;background:#e3f3ec;color:var(--nama_brand);display:grid;place-items:center;font-size:1.5rem;margin-bottom:18px}
+.nama_card h3{font-size:1.12rem;margin-bottom:8px}
+.nama_card p{color:var(--nama_ink2);font-size:.95rem}
+
+/* ---------- Paket ---------- */
+.nama_pkg{display:flex;flex-direction:column;position:relative;padding:30px 26px}
+.nama_pkg.nama_pop{border:2px solid var(--nama_brand);box-shadow:var(--nama_shadow)}
+.nama_pkg-tag{position:absolute;top:-13px;left:24px;background:var(--nama_brand);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:.08em;font-family:'Sora',sans-serif}
+.nama_pkg h3{font-size:1.2rem}
+.nama_pkg-dur{color:var(--nama_muted);font-size:.9rem;margin-bottom:14px}
+.nama_price{font-family:'Sora',sans-serif;font-size:2.2rem;font-weight:800;margin-bottom:4px}
+.nama_price small{font-size:.9rem;font-weight:500;color:var(--nama_muted)}
+.nama_pkg ul{list-style:none;margin:16px 0 24px;flex:1}
+.nama_pkg li{padding:7px 0;font-size:.93rem;color:var(--nama_ink2);border-bottom:1px dashed var(--nama_line)}
+.nama_pkg li::before{content:"✓";color:var(--nama_brand);font-weight:800;margin-right:9px}
+
+/* ---------- Langkah ---------- */
+.nama_steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.nama_step{position:relative;padding:26px 22px;background:#fff;border-radius:var(--nama_radius);border:1px solid var(--nama_line);counter-increment:s}
+.nama_step::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--nama_ink);color:var(--nama_lime);font-family:'Sora',sans-serif;font-weight:800;margin-bottom:16px}
+.nama_step h3{font-size:1.05rem;margin-bottom:6px}
+.nama_step p{font-size:.92rem;color:var(--nama_ink2)}
+
+/* ---------- Testimoni ---------- */
+.nama_quote{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--nama_radius);padding:28px}
+.nama_quote p{font-size:1.02rem;margin-bottom:18px;color:#dbe7ee}
+.nama_quote footer{display:flex;align-items:center;gap:12px;font-size:.9rem;color:#9db3c1}
+.nama_avatar{width:42px;height:42px;border-radius:50%;background:var(--nama_lime);color:var(--nama_ink);display:grid;place-items:center;font-weight:800;font-family:'Sora',sans-serif}
+.nama_stars{color:var(--nama_amber);letter-spacing:3px;margin-bottom:10px}
+
+/* ---------- CTA ---------- */
+.nama_cta{background:var(--nama_lime);border-radius:28px;padding:54px 40px;text-align:center}
+.nama_cta h2{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:10px}
+.nama_cta p{margin-bottom:24px;color:#2c3d1a}
+.nama_cta .nama_btn{background:var(--nama_ink);color:#fff}
+
+/* ---------- Page header ---------- */
+.nama_pagehead{background:var(--nama_ink);color:#fff;padding:56px 0 64px;background-image:radial-gradient(600px 260px at 90% 0,rgba(200,244,58,.18),transparent 60%)}
+.nama_pagehead h1{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:10px}
+.nama_pagehead p{color:#a9bcc9;max-width:58ch}
+.nama_crumb{font-size:.85rem;color:#7f97a6;margin-bottom:14px}
+.nama_crumb a:hover{color:var(--nama_lime)}
+
+/* ---------- Tabel ---------- */
+.nama_tablewrap{overflow-x:auto;border-radius:var(--nama_radius);border:1px solid var(--nama_line);background:#fff}
+.nama_table{width:100%;border-collapse:collapse;min-width:640px;font-size:.93rem}
+.nama_table th{background:var(--nama_ink);color:#fff;text-align:left;padding:14px 18px;font-family:'Sora',sans-serif;font-weight:600;font-size:.85rem}
+.nama_table td{padding:14px 18px;border-top:1px solid var(--nama_line)}
+.nama_table tr:hover td{background:#f4f8ef}
+
+/* ---------- Form ---------- */
+.nama_form-card{background:#fff;border:1px solid var(--nama_line);border-radius:var(--nama_radius);padding:32px}
+.nama_field{margin-bottom:18px}
+.nama_field label{display:block;font-weight:700;font-size:.88rem;margin-bottom:7px;font-family:'Sora',sans-serif}
+.nama_input{width:100%;padding:13px 15px;border:1.5px solid var(--nama_line);border-radius:12px;font:inherit;background:#fbfcfa;color:var(--nama_ink);transition:.15s}
+.nama_input:focus{outline:0;border-color:var(--nama_brand);box-shadow:0 0 0 4px rgba(11,122,99,.15);background:#fff}
+textarea.nama_input{min-height:140px;resize:vertical}
+.nama_field.nama_invalid .nama_input{border-color:var(--nama_danger)}
+.nama_err{display:none;color:var(--nama_danger);font-size:.82rem;margin-top:5px}
+.nama_field.nama_invalid .nama_err{display:block}
+.nama_row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.nama_hint{font-size:.82rem;color:var(--nama_muted);margin-top:5px}
+
+.nama_options{display:grid;gap:10px}
+.nama_opt{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1.5px solid var(--nama_line);border-radius:14px;cursor:pointer;transition:.15s;background:#fbfcfa}
+.nama_opt:hover{border-color:var(--nama_brand)}
+.nama_opt input{accent-color:var(--nama_brand);width:18px;height:18px}
+.nama_opt:has(input:checked){border-color:var(--nama_brand);background:#e8f5ef;box-shadow:0 0 0 3px rgba(11,122,99,.12)}
+.nama_opt b{font-family:'Sora',sans-serif;font-size:.95rem}
+.nama_opt small{display:block;color:var(--nama_muted);font-size:.8rem}
+.nama_opt .nama_opt-price{margin-left:auto;font-family:'Sora',sans-serif;font-weight:700;white-space:nowrap}
+
+/* ---------- Beli ---------- */
+.nama_buy{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:start}
+.nama_summary{position:sticky;top:94px;background:var(--nama_ink);color:#fff;border-radius:var(--nama_radius);padding:28px}
+.nama_summary h3{margin-bottom:16px}
+.nama_sum-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.93rem;color:#bcd0dc}
+.nama_sum-row b{color:#fff}
+.nama_sum-total{display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 20px;font-family:'Sora',sans-serif}
+.nama_sum-total strong{font-size:1.7rem;color:var(--nama_lime)}
+.nama_promo{display:flex;gap:8px;margin-top:6px}
+.nama_promo .nama_input{padding:10px 13px}
+.nama_promo .nama_btn{padding:10px 18px}
+.nama_msg{font-size:.84rem;margin-top:6px}
+.nama_msg.ok{color:#0b7a63}.nama_msg.bad{color:var(--nama_danger)}
+.nama_summary .nama_msg.ok{color:var(--nama_lime)}
+
+.nama_stage{display:none}
+.nama_stage.nama_show{display:block;animation:nama_in .4s}
+@keyframes nama_in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.nama_pay{text-align:center}
+.nama_qr{width:190px;height:190px;margin:18px auto;padding:10px;background:#fff;border:2px solid var(--nama_ink);border-radius:14px}
+.nama_timer{font-family:'Sora',sans-serif;font-size:1.9rem;color:var(--nama_danger);font-weight:800}
+.nama_demo{display:inline-block;background:#fff4d6;color:#7a5600;border-radius:999px;padding:4px 12px;font-size:.78rem;font-weight:700;margin-bottom:10px}
+.nama_voucher-out{background:var(--nama_ink);color:#fff;border-radius:20px;padding:30px;text-align:center;background-image:radial-gradient(400px 200px at 100% 0,rgba(200,244,58,.2),transparent 60%)}
+.nama_voucher-out .nama_code{font-family:'Sora',monospace;font-size:clamp(1.5rem,5vw,2.2rem);letter-spacing:.14em;color:var(--nama_lime);margin:14px 0;font-weight:800;word-break:break-all}
+.nama_actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+
+/* ---------- Status & riwayat ---------- */
+.nama_status{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.78rem;font-weight:700;font-family:'Sora',sans-serif}
+.nama_status.s-lunas{background:#dff5e8;color:#0b6a3b}
+.nama_status.s-tunggu{background:#fff1cc;color:#8a5f00}
+.nama_status.s-batal{background:#fde1db;color:#a3321f}
+.nama_result{margin-top:24px}
+.nama_hist{display:grid;gap:12px;margin-top:16px}
+.nama_hist-item{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;background:#fff;border:1px solid var(--nama_line);border-radius:14px;padding:16px 20px}
+.nama_hist-item code{font-family:'Sora',monospace;font-weight:700;letter-spacing:.06em}
+.nama_empty{padding:30px;text-align:center;color:var(--nama_muted);border:2px dashed var(--nama_line);border-radius:14px}
+
+/* ---------- Tab ---------- */
+.nama_tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.nama_tab{padding:10px 22px;border-radius:999px;border:1.5px solid var(--nama_line);background:#fff;cursor:pointer;font:600 .92rem 'Sora',sans-serif;color:var(--nama_ink2)}
+.nama_tab.nama_on{background:var(--nama_ink);color:var(--nama_lime);border-color:var(--nama_ink)}
+.nama_panel{display:none;background:#fff;border:1px solid var(--nama_line);border-radius:var(--nama_radius);padding:28px}
+.nama_panel.nama_on{display:block;animation:nama_in .35s}
+.nama_panel ol{padding-left:22px}.nama_panel li{margin:8px 0;color:var(--nama_ink2)}
+
+/* ---------- FAQ ---------- */
+.nama_faq-tools{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.nama_faq-tools .nama_input{flex:1;min-width:220px}
+.nama_acc{background:#fff;border:1px solid var(--nama_line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.nama_acc-q{width:100%;text-align:left;background:none;border:0;padding:18px 22px;font:600 1rem 'Sora',sans-serif;color:var(--nama_ink);cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.nama_acc-q::after{content:"+";font-size:1.5rem;color:var(--nama_brand);transition:.25s}
+.nama_acc.nama_open .nama_acc-q::after{transform:rotate(45deg)}
+.nama_acc-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 22px;color:var(--nama_ink2)}
+.nama_acc.nama_open .nama_acc-a{padding-bottom:20px}
+
+/* ---------- Tentang / kontak ---------- */
+.nama_split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.nama_visual{aspect-ratio:4/3;border-radius:24px;background:linear-gradient(135deg,var(--nama_brand),var(--nama_ink));display:grid;place-items:center;color:var(--nama_lime);overflow:hidden;position:relative}
+.nama_visual svg{width:55%}
+.nama_team{text-align:center}
+.nama_team .nama_avatar{width:76px;height:76px;margin:0 auto 14px;font-size:1.6rem}
+.nama_info-item{display:flex;gap:16px;margin-bottom:22px}
+.nama_info-item .nama_icon{margin:0;flex:none}
+.nama_info-item h4{font-size:1rem;margin-bottom:2px}
+.nama_info-item p{color:var(--nama_ink2);font-size:.94rem}
+.nama_alert{display:none;padding:16px 18px;border-radius:12px;background:#dff5e8;color:#0b5a33;margin-top:16px;font-weight:500}
+.nama_alert.nama_show{display:block}
+
+/* ---------- Footer ---------- */
+#nama_footer{background:#06121d;color:#8fa6b5;padding:64px 0 26px}
+.nama_foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:40px}
+#nama_footer h4{color:#fff;font-size:.95rem;margin-bottom:14px}
+#nama_footer ul{list-style:none}
+#nama_footer li{margin:8px 0;font-size:.92rem}
+#nama_footer a:hover{color:var(--nama_lime)}
+.nama_foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* ---------- Toast & reveal ---------- */
+#nama_toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,40px);background:var(--nama_ink);color:#fff;padding:13px 24px;border-radius:999px;opacity:0;pointer-events:none;transition:.3s;z-index:99;font-size:.92rem;border:1px solid var(--nama_lime)}
+#nama_toast.nama_show{opacity:1;transform:translate(-50%,0)}
+.nama_reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.nama_reveal.nama_in{opacity:1;transform:none}
+#nama_totop{position:fixed;right:22px;bottom:24px;width:46px;height:46px;border-radius:50%;border:0;background:var(--nama_lime);color:var(--nama_ink);font-size:1.2rem;font-weight:800;cursor:pointer;box-shadow:var(--nama_shadow);opacity:0;pointer-events:none;transition:.25s}
+#nama_totop.nama_show{opacity:1;pointer-events:auto}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  .nama_hero-grid,.nama_split,.nama_buy{grid-template-columns:1fr}
+  .nama_summary{position:static}
+  .nama_grid-3{grid-template-columns:1fr 1fr}
+  .nama_grid-4,.nama_steps{grid-template-columns:1fr 1fr}
+  .nama_foot-grid{grid-template-columns:1fr 1fr}
+  .nama_stats-grid{grid-template-columns:1fr 1fr}
+  .nama_stat:nth-child(2){border-right:0}
+  .nama_stat:nth-child(-n+2){border-bottom:1px solid var(--nama_line)}
+  .nama_burger{display:block}
+  .nama_menu{position:absolute;left:0;right:0;top:70px;background:var(--nama_ink);flex-direction:column;align-items:stretch;padding:12px 20px 22px;display:none;border-top:1px solid rgba(255,255,255,.1)}
+  .nama_menu.nama_open{display:flex}
+  .nama_nav-cta{display:none}
+}
+@media(max-width:640px){
+  .nama_section{padding:60px 0}
+  .nama_grid-3,.nama_grid-4,.nama_grid-2,.nama_steps,.nama_row2,.nama_foot-grid{grid-template-columns:1fr}
+  .nama_form-card{padding:22px}
+  .nama_cta{padding:40px 22px}
+  .nama_ticket-stage{min-height:320px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.nama_reveal{opacity:1;transform:none}}
